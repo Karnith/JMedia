@@ -1,0 +1,112 @@
+<!--
+<h2>users</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <p><strong>Sorting:</strong> {{tableParams.sorting()|json}}
+        <table ng-table="tableParams" class="table">
+            <tr ng-repeat="user in  $data">
+                <td data-title="'Username'" sortable="'username'">
+                    <span ng-class="{ 'fa fa-info-circle': user.title == '666','fa fa-dot-circle-o': user.username != '666' }"> {{ user.username}}</span>
+                </td>
+                <td  data-title="'Email'" sortable="'email'">
+                    {{user.email }}
+                </td>
+                <td  data-title="'Name'" sortable="'name'">
+                    {{user.name }}
+                </td>
+                <td  data-title="'Role'" sortable="'admin'">
+                    {{user.admin }}
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>-->
+<div class="page-container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
+    <main-menu></main-menu>
+    <div class="main-content">
+        <user-menu></user-menu>
+        <hr />
+        <ol class="breadcrumb bc-3">
+            <li>
+                <a href="index.html"><i class="entypo-home"></i>Home</a>
+            </li>
+            <li>
+                <a href="extra-icons.html">Extra</a>
+            </li>
+            <li class="active">
+                <strong>Members</strong>
+            </li>
+        </ol>
+        <div class="row">
+            <div class="col-md-9 col-sm-7">
+                <h2>Members</h2>
+            </div>
+            <div class="col-md-3 col-sm-5">
+                <form method="get" role="form" class="search-form-full">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="s" id="search-input" placeholder="Search..." />
+                        <i class="entypo-search"></i>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Member Entries -->
+        <!-- Single Member -->
+        <div ng-controller="UserCtrl">
+            <div class="member-entry" ng-repeat="user in users">
+                <a href="extra-timeline.html" class="member-img">
+                    <img src="themes/default/images/member.jpg" class="img-rounded" />
+                    <i class="entypo-forward"></i>
+                </a>
+                <div class="member-details">
+                    <h4>
+                        <a href="extra-timeline.html">{{user.name }}</a>
+                    </h4>
+                    <!-- Details with Icons -->
+                    <div class="row info-list">
+                        <div class="col-sm-4">
+                            <i class="entypo-briefcase"></i>
+                            {{user.title }}
+                        </div>
+                        <div class="col-sm-4">
+                            <i class="entypo-twitter"></i>
+                            <a href="#">@johnnie</a>
+                        </div>
+                        <div class="col-sm-4">
+                            <i class="entypo-facebook"></i>
+                            <a href="#">fb.me/johnnie</a>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="col-sm-4">
+                            <i class="entypo-location"></i>
+                            <a href="#">Prishtina</a>
+                        </div>
+                        <div class="col-sm-4">
+                            <i class="entypo-mail"></i>
+                            <a href="#">{{user.email }}</a>
+                        </div>
+                        <div class="col-sm-4">
+                            <i class="entypo-linkedin"></i>
+                            <a href="#">johnkennedy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Pager for search results -->
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="pager">
+                        <li><a href="#"><i class="entypo-left-thin"></i> Previous</a></li>
+                        <li><a href="#">Next <i class="entypo-right-thin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer class="main">
+            &copy; 2014 <strong>Neon</strong> Admin Theme by <a href="http://laborator.co" target="_blank">Laborator</a>
+        </footer>
+    </div>
+    <chat></chat>
+</div>

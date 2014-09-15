@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html ng-app="sailng" ng-controller="AppCtrl">
+<head>
+    <base href="/">
+    <title>JMedia</title>
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+    <!--
+        Stylesheets and Preprocessors
+        ==============================
+
+        You can always bring in CSS files manually with `<link>` tags, or asynchronously
+        using a solution like AMD (RequireJS).  Or, if you like, you can take advantage
+        of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+        By default, stylesheets from your `assets/styles` folder are included
+        here automatically (between STYLES and STYLES END). Both CSS (.css) and LESS (.less)
+        are supported. In production, your styles will be minified and concatenated into
+        a single file.
+
+        To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Change the order of your CSS files
+            + Import stylesheets from other directories
+            + Use a different or additional preprocessor, like SASS, SCSS or Stylus
+    -->
+    <!--STYLES-->
+    <link rel="stylesheet" href="/vendor/angular-rx-data-table/dist/styles/rx-data-table.min.css">
+    <link rel="stylesheet" href="/vendor/angular-xeditable/dist/css/xeditable.css">
+    <link rel="stylesheet" href="/vendor/angular/angular-csp.css">
+    <link rel="stylesheet" href="/vendor/bootstrapValidator/dist/css/bootstrapValidator.min.css">
+    <link rel="stylesheet" href="/vendor/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/ng-table/ng-table.css">
+    <link rel="stylesheet" href="/styles/custom.css">
+    <link rel="stylesheet" href="/styles/default.css">
+    <link rel="stylesheet" href="/styles/importer.css">
+    <!--STYLES END-->
+    <script type="text/javascript">
+        window.JMedia = { csrf: '<%= _csrf %>'};
+    </script>
+
+    <audio id="chatAudio">
+        <source src="/sounds/notify.ogg" type="audio/ogg">
+        <source src="/sounds/notify.mp3" type="audio/mpeg">
+        <source src="/sounds/notify.wav" type="audio/wav">
+    </audio>
+</head>
+
+<body class="page-body">
+    <!--<div class="navbar navbar-inverse navbar-fixed-top">-->
+        <!--<div class="container">-->
+            <!--<div class="navbar-header">-->
+                <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">-->
+                    <!--<span class="icon-bar"></span>-->
+                    <!--<span class="icon-bar"></span>-->
+                    <!--<span class="icon-bar"></span>-->
+                <!--</button>-->
+                <!--<a class="navbar-brand" href="/"> JMedia</a>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; Nav toggle&ndash;&gt;-->
+            <!--<div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">-->
+                <!--<ul class="nav navbar-nav">-->
+                    <!--<% if (session.authenticated && session.user.admin) { %>-->
+                    <!--<li class="dropdown">-->
+                        <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">-->
+                              <!--<span id="currentAdminMenu" class="fa fa-wrench fa-lg">-->
+                                  <!--Administration-->
+                              <!--</span>-->
+                            <!--<b class="caret"></b>-->
+                        <!--</a>-->
+                        <!--<ul class="dropdown-menu">-->
+                            <!--<li><a href="/api/administration"><span class="fa fa-desktop fa-lg"></span> System Administration</a></li>-->
+                            <!--<li><a href="/api/administration/users"><span class="fa fa-group fa-lg"></span> User Administration</a></li>-->
+                        <!--</ul>-->
+                    <!--</li>-->
+                    <!--<% } %>-->
+                <!--</ul>-->
+    <!---->
+                <!--&lt;!&ndash;<ul class="nav navbar-nav navbar-right">&ndash;&gt;-->
+                <!--<% if (!session.authenticated) { %>-->
+                <!--<div>-->
+                    <!--<a href="/api/members/reset" class="btn btn-info navbar-btn navbar-right" style="margin-left: 5px">Forgot Password</a>-->
+                <!--</div>-->
+                <!--<form action="/api/session/login" class="navbar-form navbar-right">-->
+                    <!--<div class="form-group">-->
+                        <!--<input type="text" placeholder="Email" name="email" class="form-control">-->
+                    <!--</div>-->
+                    <!--<div class="form-group">-->
+                        <!--<input type="password" placeholder="Password" name="password" class="form-control">-->
+                    <!--</div>-->
+                    <!--<button type="submit" class="btn btn-success">Sign in</button>-->
+                    <!--<input type="hidden" name="_csrf" value="<%= _csrf %>" />-->
+                <!--</form>-->
+                <!--<% } %>-->
+                <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+    <!---->
+                <!--<% if (session.authenticated) { %>-->
+                <!--<ul class="nav navbar-nav navbar-right navLiRightEdgePadding">-->
+                    <!--<li class="dropdown">-->
+                        <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">-->
+                              <!--<span id="currentUserMenu" class="fa fa-user">-->
+                                  <!--<%= session.user.name %>-->
+                              <!--</span>-->
+                            <!--<b class="caret"></b>-->
+                        <!--</a>-->
+                        <!--<ul class="dropdown-menu">-->
+                            <!--<li><a href="/api/account/details/<%= session.user.id %>"><span class="fa fa-user"></span> Profile</a></li>-->
+                            <!--<li><a href="/"><span class="fa fa-cogs"></span> Settings</a></li>-->
+                            <!--<li class="divider"></li>-->
+                            <!--<li><a href="/api/session/destroy"><span class="fa fa-sign-out"></span> Logout</a></li>-->
+                        <!--</ul>-->
+                    <!--</li>-->
+                <!--</ul>-->
+                <!--<% } %>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+<%- body %>
+<!--
+    <div class="container">
+        <hr>
+        <footer class="footer pull-right">
+            <div>
+                <a href="https://github.com/Karnith/JMedia/">JMedia</a>
+                <div>Take control of your library!</div>
+            </div>
+        </footer>
+    </div>
+-->
+
+
+
+<!--
+
+  Client-side Javascript
+  ========================
+
+  You can always bring in JS files manually with `script` tags, or asynchronously
+  on the client using a solution like AMD (RequireJS).  Or, if you like, you can
+  take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+  By default, files in your `assets/js` folder are included here
+  automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
+  CoffeeScript (.coffee) are supported. In production, your scripts will be minified
+  and concatenated into a single file.
+
+  To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+  For example, here are a few things you could do:
+
+      + Change the order of your scripts
+      + Import scripts from other directories
+      + Use a different preprocessor, like TypeScript
+
+-->
+
+<!--SCRIPTS-->
+<script src="/vendor/jquery/dist/jquery.min.js"></script>
+<script src="/vendor/socket.io-client/socket.io.js"></script>
+<script src="/js/dependencies/sails.io.js"></script>
+<script src="/vendor/angular/angular.js"></script>
+<script src="/vendor/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="/vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="/vendor/angular-ui-utils/ui-utils.min.js"></script>
+<script src="/vendor/angular-sails/dist/angular-sails.min.js"></script>
+<script src="/vendor/lodash/dist/lodash.min.js"></script>
+<script src="/vendor/angular-moment/angular-moment.min.js"></script>
+<script src="/vendor/angular-translate/angular-translate.min.js"></script>
+<script src="/vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+<script src="/vendor/ng-table/ng-table.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/ckeditor.js"></script>
+<script src="/vendor/angular-animate/angular-animate.min.js"></script>
+<script src="/vendor/angular-mocks/angular-mocks.js"></script>
+<script src="/vendor/angular-route/angular-route.min.js"></script>
+<script src="/vendor/angular-rx-data-table/dist/scripts/rx-data-table.js"></script>
+<script src="/vendor/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="/vendor/angular-ui-utils/ui-utils-ieshiv.min.js"></script>
+<script src="/vendor/angular-xeditable/dist/js/xeditable.min.js"></script>
+<script src="/vendor/bootstrap3-switch/build/js/bootstrap-switch.min.js"></script>
+<script src="/vendor/bootstrapValidator/dist/js/bootstrapValidator.min.js"></script>
+<script src="/vendor/es5-shim/es5-sham.min.js"></script>
+<script src="/vendor/es5-shim/es5-shim.min.js"></script>
+<script src="/vendor/greensock/src/minified/TimelineMax.min.js"></script>
+<script src="/vendor/greensock/src/minified/TweenMax.min.js"></script>
+<script src="/vendor/greensock/src/minified/easing/EasePack.min.js"></script>
+<script src="/vendor/greensock/src/minified/jquery.gsap.min.js"></script>
+<script src="/vendor/greensock/src/minified/plugins/AttrPlugin.min.js"></script>
+<script src="/vendor/greensock/src/minified/plugins/BezierPlugin.min.js"></script>
+<script src="/vendor/greensock/src/minified/plugins/CSSPlugin.min.js"></script>
+<script src="/vendor/greensock/src/minified/plugins/CSSRulePlugin.min.js"></script>
+<script src="/vendor/greensock/src/minified/plugins/ColorPropsPlugin.min.js"></script>
+<script src="/vendor/greensock/src/minified/plugins/DirectionalRotationPlugin.min.js"></script>
+<script src="/vendor/greensock/src/minified/plugins/EaselPlugin.min.js"></script>
+<script src="/vendor/greensock/src/minified/plugins/EndArrayPlugin.min.js"></script>
+<script src="/vendor/greensock/src/minified/plugins/KineticPlugin.min.js"></script>
+<script src="/vendor/greensock/src/minified/plugins/RaphaelPlugin.min.js"></script>
+<script src="/vendor/greensock/src/minified/plugins/RoundPropsPlugin.min.js"></script>
+<script src="/vendor/greensock/src/minified/plugins/ScrollToPlugin.min.js"></script>
+<script src="/vendor/greensock/src/minified/plugins/TextPlugin.min.js"></script>
+<script src="/vendor/greensock/src/minified/utils/Draggable.min.js"></script>
+<script src="/vendor/jqueryui/jquery-ui.min.js"></script>
+<script src="/vendor/json3/lib/json3.min.js"></script>
+<script src="/vendor/lodash/dist/lodash.compat.min.js"></script>
+<script src="/vendor/lodash/dist/lodash.underscore.min.js"></script>
+<script src="/vendor/moment/min/moment-with-locales.min.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/adapters/jquery.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/config.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/lang/en.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/lang/ru.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/a11yhelp.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/ar.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/bg.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/ca.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/cs.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/cy.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/da.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/de.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/el.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/en.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/eo.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/es.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/et.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/fa.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/fi.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/fr-ca.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/fr.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/gl.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/gu.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/he.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/hi.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/hr.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/hu.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/id.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/it.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/ja.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/km.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/ko.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/ku.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/lt.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/lv.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/mk.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/mn.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/nb.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/nl.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/no.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/pl.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/pt-br.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/pt.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/ro.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/ru.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/si.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/sk.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/sl.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/sq.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/sr-latn.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/sr.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/sv.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/th.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/tr.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/ug.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/uk.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/vi.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/a11yhelp/dialogs/lang/zh-cn.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/clipboard/dialogs/paste.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/dialog/dialogDefinition.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/image/dialogs/image.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/image2/dialogs/image2.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/link/dialogs/anchor.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/link/dialogs/link.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/pastefromword/filter/default.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/scayt/dialogs/options.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/ar.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/bg.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/ca.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/cs.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/cy.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/de.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/el.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/en.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/eo.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/es.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/et.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/fa.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/fi.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/fr-ca.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/fr.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/gl.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/he.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/hr.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/hu.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/id.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/it.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/ja.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/km.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/ku.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/lv.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/nb.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/nl.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/no.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/pl.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/pt-br.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/pt.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/ru.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/si.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/sk.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/sl.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/sq.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/sv.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/th.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/tr.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/ug.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/uk.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/vi.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/lang/zh-cn.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/specialchar/dialogs/specialchar.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/table/dialogs/table.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/tabletools/dialogs/tableCell.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/templates/dialogs/templates.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/templates/templates/default.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/wsc/dialogs/wsc.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/plugins/wsc/dialogs/wsc_ie.js"></script>
+<script src="/vendor/ng-ckeditor/libs/ckeditor/styles.js"></script>
+<script src="/vendor/ng-ckeditor/ng-ckeditor.min.js"></script>
+<script src="/vendor/underscore/underscore.js"></script>
+<script src="/src/app/about/index.js"></script>
+<script src="/src/app/app.js"></script>
+<script src="/src/app/auth/index.js"></script>
+<script src="/src/app/auth/login.js"></script>
+<script src="/src/app/auth/register.js"></script>
+<script src="/src/app/header/index.js"></script>
+<script src="/src/app/home/index.js"></script>
+<script src="/src/app/members/index.js"></script>
+<script src="/src/app/members/memberscenter/index.js"></script>
+<script src="/src/app/members/users/index.js"></script>
+<script src="/src/common/directives/blink.js"></script>
+<script src="/src/common/directives/chat.js"></script>
+<script src="/src/common/directives/index.js"></script>
+<script src="/src/common/directives/mainMenu.js"></script>
+<script src="/src/common/directives/userMenu.js"></script>
+<script src="/src/common/models/User.js"></script>
+<script src="/src/common/models/index.js"></script>
+<script src="/src/common/services/config.js"></script>
+<script src="/src/common/services/index.js"></script>
+<script src="/src/common/services/lodash.js"></script>
+<script src="/src/common/services/title.js"></script>
+<script src="/src/common/services/utils.js"></script>
+<script src="/themes/default/js/joinable.js"></script>
+<script src="/themes/default/js/resizeable.js"></script>
+<script src="/themes/default/js/neon-api.js"></script>
+<script src="/themes/default/js/neon-custom.js"></script>
+<script src="/js/customValidate.js"></script>
+<script src="/js/password.js"></script>
+<script src="/js/socketApp.js"></script>
+<!--SCRIPTS END-->
+
+<!--
+        Client-side Templates
+        ========================
+
+        HTML templates are important prerequisites of modern, rich client applications.
+        To work their magic, frameworks like Backbone, Angular, Ember, and Knockout require
+        that you load these templates client-side.
+
+        By default, your Gruntfile is configured to automatically load and precompile
+        client-side JST templates in your `assets/templates` folder, then
+        include them here automatically (between TEMPLATES and TEMPLATES END).
+
+        To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Import templates from other directories
+            + Use a different template engine (handlebars, jade, dust, etc.)
+            + Internationalize your client-side templates using a server-side
+              stringfile before they're served.
+    -->
+
+<!--TEMPLATES-->
+<script type="text/javascript" src="/templates.js"></script>
+<!--TEMPLATES END-->
+
+</body>
+</html>

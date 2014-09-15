@@ -1,0 +1,169 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="panel panel-default">
+				<!-- Default panel contents -->
+				<div class="panel-heading"><h3>Users</h3></div>
+			    <div class="panel-body">
+			        <p>Panel body ...</p>
+			    </div>
+			
+			    <!-- Table -->
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Online</th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Title</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <% _.each(users, function(user) { %>
+                    <tbody>
+                    <tr data-id="<%= user.id %>" data-model="user">
+                        <% if (user.online) { %>
+                        <td><img src="/images/icon-online.png"></td>
+                        <% } else { %>
+                        <td><img src="/images/icon-offline.png"></td>
+                        <% } %>
+                        <td><%= user.id %></td>
+                        <td><%= user.name %></td>
+                        <td><%= user.title %></td>
+                        <td><%= user.email %></td>
+                        <% if (user.admin) { %>
+                        <td> <img src="/images/admin.png"></td>
+                        <% } else { %>
+                        <td> <img src="/images/pawn.png"></td>
+                        <% } %>
+                        <!--<td><a href="/account/details/<%= user.id %>" class="btn btn-sm btn-primary">Show</a></td>-->
+                        <!--<td><a href="/account/edit/<%= user.id %>" class="btn btn-sm btn-warning">Edit</a></td>-->
+                        <td>
+                            <div class="container">
+                                <div class="">
+                                    <ul class="nav navbar-nav">
+                                        <li><span><a href="/account/details/<%= user.id %>" class="btn btn-sm btn-primary">Show</a></span></li>
+                                        <li><span><a href="/account/edit/<%= user.id %>" class="btn btn-sm btn-warning">Edit</a></span></li>
+                                        <li>
+                                            <form action="/administration/destroy/<%= user.id %>" method="POST" role="form">
+                                                <input type="hidden" name="_method" value="delete"/>
+                                                <input type="submit" class="btn btn-sm btn-danger" value="Delete"/>
+                                                <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                    <% }) %>
+                </table>
+			</div>
+		</div>
+	</div>
+</div>
+<!--
+<div class="container">
+    <h3>Users</h3>
+    <table class="table">
+        <tr>
+            <th></th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Title</th>
+            <th>Email</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        <% _.each(users, function(user) { %>
+        <tr data-id="<%= user.id %>" data-model="user">
+            <% if (user.online) { %>
+            <td><img src="/images/icon-online.png"></td>
+            <% } else { %>
+            <td><img src="/images/icon-offline.png"></td>
+            <% } %>
+            <td><%= user.id %></td>
+            <td><%= user.name %></td>
+            <td><%= user.title %></td>
+            <td><%= user.email %></td>
+            <% if (user.admin) { %>
+            <td> <img src="/images/admin.png"></td>
+            <% } else { %>
+            <td> <img src="/images/pawn.png"></td>
+            <% } %>
+            <td><a href="/account/details/<%= user.id %>" class="btn btn-sm btn-primary">Show</a></td>
+            <td><a href="/account/edit/<%= user.id %>" class="btn btn-sm btn-warning">Edit</a></td>
+            <td>
+                <form action="/administration/destroy/<%= user.id %>" method="POST">
+                    <input type="hidden" name="_method" value="delete"/>
+                    <input type="submit" class="btn btn-sm btn-danger" value="Delete"/>
+                    <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+                </form>
+            </td>
+        </tr>
+        <% }) %>
+    </table>
+</div>-->
+<!--
+<div class="container">
+	<div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="panel panel-default">
+            	&lt;!&ndash; Default panel contents &ndash;&gt;
+            	<div class="panel-heading">Users</div>
+                <div class="panel-body">
+                    <p>Panel body ...</p>
+                </div>
+
+                &lt;!&ndash; Table &ndash;&gt;
+                <table class="table table-hover">
+                    <% _.each(users, function(user) { %>
+                    <tr data-id="<%= user.id %>" data-model="user">
+                        <td data-title="'Online'">
+                            <% if (user.online) { %>
+                            <span><img src="/images/icon-online.png"></span>
+                            <% } else { %>
+                            <span><img src="/images/icon-offline.png"></span>
+                            <% } %>
+                        </td>
+                        <td data-title="'ID'"><span><%= user.id %></span></td>
+                        <td data-title="'Name'"><span><%= user.name %></span></td>
+                        <td data-title="'Title'"><span><%= user.title %></span></td>
+                        <td data-title="'Email'"><span><%= user.email %></span></td>
+                        <td data-title="'Role'">
+                            <% if (user.admin) { %>
+                            <img src="/images/admin.png">
+                            <% } else { %>
+                            <img src="/images/pawn.png">
+                            <% } %>
+                        </td>
+                        <td>
+                            <div class="container">
+                                <div class="">
+                                    <ul class="nav navbar-nav">
+                                        <li><span><a href="/account/details/<%= user.id %>" class="btn btn-sm btn-primary">Show</a></span></li>
+                                        <li><span><a href="/account/edit/<%= user.id %>" class="btn btn-sm btn-warning">Edit</a></span></li>
+                                        <li>
+                                            <form action="/administration/destroy/<%= user.id %>" method="POST" role="form">
+                                                <input type="hidden" name="_method" value="delete"/>
+                                                <input type="submit" class="btn btn-sm btn-danger" value="Delete"/>
+                                                <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <% }) %>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>-->

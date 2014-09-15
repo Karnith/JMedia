@@ -1,4 +1,4 @@
-JMedia
+JMedia (Dev branch)
 ======
 
-Media cataloging service NodeJS style. Based off Couch Potato and Headphones.
+Media cataloging service NodeJS style.
