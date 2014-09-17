@@ -1,19 +1,19 @@
-class App extends App('users')
+class App extends App('members.users')
   constructor: ->
     return []
 
-class Config extends Config('users')
+class Config extends Config('members.users')
   constructor: ($stateProvider)->
-    $stateProvider.state "users",
-      url: "/users"
+    $stateProvider.state 'users',
+      url: '/users'
       views:
         main:
-          controller: "UserCtrl"
-          templateUrl: "members/users/index.tpl.html"
+          controller: 'UserCtrl'
+          templateUrl: 'members/users/index.tpl.html'
       data:
-        pageTitle: "Users"
+        pageTitle: 'Users'
 
-class UserCtrl extends Controller('users')
+class UserCtrl extends Controller('members.users')
   constructor: ($scope, $sails, lodash, config, titleService, UserModel, $filter, ngTableParams)->
     $scope.newUser = {}
     $scope.users = []
@@ -24,7 +24,7 @@ class UserCtrl extends Controller('users')
         # lodash.remove($scope.todos, {id: todo.id})
 
     $scope.createUser = (newUser) ->
-      console.log "new ", newUser
+      console.log 'new ', newUser
       newUser.user = config.currentUser.id
       UserModel.create(newUser).then (model) ->
         $scope.newUser.title = ""

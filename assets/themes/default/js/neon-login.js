@@ -24,7 +24,7 @@ var neonLogin = neonLogin || {};
 				
 				password: {
 					required: true
-				},
+				}
 				
 			},
 			
@@ -61,12 +61,12 @@ var neonLogin = neonLogin || {};
 											
 					// Send data to the server
 					$.ajax({
-						url: baseurl + 'data/sample-login-form.php',
+						url: 'api/session/login',
 						method: 'POST',
 						dataType: 'json',
 						data: {
 							username: $("input#username").val(),
-							password: $("input#password").val(),
+							password: $("input#password").val()
 						},
 						error: function()
 						{
@@ -115,10 +115,7 @@ var neonLogin = neonLogin || {};
 				}, 650);
 			}
 		});
-		
-		
-		
-		
+
 		// Lockscreen & Validation
 		var is_lockscreen = $(".login-page").hasClass('is-lockscreen');
 		
@@ -132,7 +129,7 @@ var neonLogin = neonLogin || {};
 				
 					password: {
 						required: true
-					},
+					}
 					
 				},
 				
@@ -185,12 +182,7 @@ var neonLogin = neonLogin || {};
 				}
 			});
 		}
-		
-		
-		
-		
-		
-		
+
 		// Login Form Setup
 		neonLogin.$body = $(".login-page");
 		neonLogin.$login_progressbar_indicator = $(".login-progressbar-indicator h3");
@@ -354,7 +346,8 @@ var neonLogin = neonLogin || {};
 			
 			// Create Progress Circle
 			var bg = neonLogin.lockscreen_progress_canvas,
-				ctx = ctx = bg.getContext('2d'),
+//				ctx = ctx = bg.getContext('2d'),
+                ctx = bg.getContext('2d'),
 				imd = null,
 				circ = Math.PI * 2,
 				quart = Math.PI / 2,
@@ -376,7 +369,7 @@ var neonLogin = neonLogin || {};
 			    ctx.stroke();
 			    
 			    currentProgress = current * 100;
-			}
+			};
 			
 			drawProgress(0/100);
 			

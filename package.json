@@ -45,7 +45,7 @@
     "sails-memory": "^0.10.3",
     "sails-mongo": "^0.10.4",
     "validator": "^3.17.1",
-    "waterlock": "git://github.com/Karnith/waterlock.git",
+    "waterlock": "*",
     "waterlock-local-auth": "git://github.com/Karnith/waterlock-local-auth.git",
     "winston": "^0.7.3"
   },

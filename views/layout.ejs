@@ -6,6 +6,7 @@
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="csrf-token" content="<%= _csrf %>">
 
 
     <!--
@@ -39,9 +40,11 @@
     <link rel="stylesheet" href="/styles/default.css">
     <link rel="stylesheet" href="/styles/importer.css">
     <!--STYLES END-->
+<!--
     <script type="text/javascript">
-        window.JMedia = { csrf: '<%= _csrf %>'};
+        window.JMedia = { _csrf: '<%= _csrf %>'};
     </script>
+-->
 
     <audio id="chatAudio">
         <source src="/sounds/notify.ogg" type="audio/ogg">
@@ -334,7 +337,7 @@
 <script src="/src/app/header/index.js"></script>
 <script src="/src/app/home/index.js"></script>
 <script src="/src/app/members/index.js"></script>
-<script src="/src/app/members/memberscenter/index.js"></script>
+<script src="/src/app/members/membersdash/index.js"></script>
 <script src="/src/app/members/users/index.js"></script>
 <script src="/src/common/directives/blink.js"></script>
 <script src="/src/common/directives/chat.js"></script>

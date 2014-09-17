@@ -81,7 +81,7 @@ module.exports = {
         });
     },
 
-    destroy: function(req, res, next) {
+    logout: function(req, res, next) {
         User.findOne(req.session.user.id, function foundUsers(err, user) {
             var userId = req.session.user.id;
 

@@ -22,8 +22,7 @@ var public_vars = public_vars || {};
 		public_vars.$mainContent	= public_vars.$pageContainer.find('.main-content');
 		public_vars.$sidebarUserEnv = public_vars.$sidebarMenu.find('.sidebar-user-info');
 		public_vars.$sidebarUser 	= public_vars.$sidebarUserEnv.find('.user-link');
-		
-		
+
 		public_vars.$body.addClass('loaded');
 		
 		// Just to make sure...
@@ -37,22 +36,13 @@ var public_vars = public_vars || {};
 		{
 			public_vars.isRightSidebar = true;
 		}
-		
-		
-		
-		
+
 		// Sidebar Menu Setup
 		setup_sidebar_menu();
-		
-		
-		
-		
+
 		// Horizontal Menu Setup
 		setup_horizontal_menu();
-		
-		
-		
-		
+
 		// Sidebar Collapse icon
 		public_vars.$sidebarMenu.find(".sidebar-collapse-icon").on('click', function(ev)
 		{
@@ -62,9 +52,6 @@ var public_vars = public_vars || {};
 			
 			toggle_sidebar_menu(with_animation);
 		});
-		
-		
-		
 		
 		// Mobile Sidebar Collapse icon
 		public_vars.$sidebarMenu.find(".sidebar-mobile-menu a").on('click', function(ev)
@@ -85,9 +72,6 @@ var public_vars = public_vars || {};
 				public_vars.$mainMenu.toggle();
 			}
 		});
-		
-		
-		
 		
 		// Mobile Horizontal Menu Collapse icon
 		public_vars.$horizontalMenu.find(".horizontal-mobile-menu a").on('click', function(ev)
@@ -115,9 +99,6 @@ var public_vars = public_vars || {};
 			}
 		});
 		
-		
-		
-		
 		// Close Sidebar if Tablet Screen is visible
 		public_vars.$sidebarMenu.data('initial-state', (public_vars.$pageContainer.hasClass('sidebar-collapsed') ? 'closed' : 'open'));
 		
@@ -125,9 +106,6 @@ var public_vars = public_vars || {};
 		{
 			hide_sidebar_menu(false);
 		}
-	
-	
-	
 	
 		// NiceScroll
 		if($.isFunction($.fn.niceScroll))
@@ -178,9 +156,6 @@ var public_vars = public_vars || {};
 			}
 		}
 		
-		
-		
-		
 		// Scrollable
 		if($.isFunction($.fn.slimScroll))
 		{
@@ -212,9 +187,6 @@ var public_vars = public_vars || {};
 				});
 			});
 		}
-		
-		
-		
 		
 		// Panels
 		
@@ -299,9 +271,6 @@ var public_vars = public_vars || {};
 			}
 		});
 		
-		
-		
-		
 		// Data Toggle for Radio and Checkbox Elements
 		$('[data-toggle="buttons-radio"]').each(function()
 		{
@@ -345,9 +314,6 @@ var public_vars = public_vars || {};
 			});
 		});
 		
-		
-		
-		
 		// Popovers and tooltips
 		$('[data-toggle="popover"]').each(function(i, el)
 		{
@@ -389,9 +355,6 @@ var public_vars = public_vars || {};
 			});
 		});
 
-		
-		
-		
 		// jQuery Knob
 		if($.isFunction($.fn.knob))
 		{		
@@ -446,9 +409,6 @@ var public_vars = public_vars || {};
 				}
 			});
 		}
-		
-		
-		
 		
 		// Slider
 		if($.isFunction($.fn.slider))
@@ -583,10 +543,7 @@ var public_vars = public_vars || {};
 				
 			})
 		}
-		
-		
-		
-		
+
 		// Radio Toggle
 		if($.isFunction($.fn.bootstrapSwitch))
 		{
@@ -595,10 +552,7 @@ var public_vars = public_vars || {};
 		        $('.make-switch.is-radio').bootstrapSwitch('toggleRadioState');
 		    });	
 		}
-		
-		
-		
-		
+
 		// Select2 Dropdown replacement
 		if($.isFunction($.fn.select2))
 		{
@@ -626,9 +580,6 @@ var public_vars = public_vars || {};
 			}
 		}
 		
-		
-		
-		
 		// SelectBoxIt Dropdown replacement
 		if($.isFunction($.fn.selectBoxIt))
 		{
@@ -645,27 +596,18 @@ var public_vars = public_vars || {};
 				$this.selectBoxIt(opts);
 			});
 		}
-		
-		
-		
-		
+
 		// Auto Size for Textarea
 		if($.isFunction($.fn.autosize))
 		{
 			$("textarea.autogrow, textarea.autosize").autosize();
 		}
-		
-		
-		
-		
+
 		// Tagsinput
 		if($.isFunction($.fn.tagsinput))
 		{
 			$(".tagsinput").tagsinput();
 		}
-		
-		
-		
 		
 		// Typeahead
 		if($.isFunction($.fn.typeahead))
@@ -714,10 +656,7 @@ var public_vars = public_vars || {};
 				$this.typeahead(opts);
 			});
 		}
-		
-		
-		
-		
+
 		// Datepicker
 		if($.isFunction($.fn.datepicker))
 		{
@@ -758,10 +697,7 @@ var public_vars = public_vars || {};
 				}
 			});
 		}
-		
-		
-		
-		
+
 		// Timepicker
 		if($.isFunction($.fn.timepicker))
 		{
@@ -802,10 +738,7 @@ var public_vars = public_vars || {};
 				}
 			});
 		}
-		
-		
-		
-		
+
 		// Colorpicker
 		if($.isFunction($.fn.colorpicker))
 		{
@@ -856,10 +789,7 @@ var public_vars = public_vars || {};
 				}
 			});
 		}
-		
-		
-		
-		
+
 		// Date Range Picker
 		if($.isFunction($.fn.daterangepicker))
 		{
@@ -930,10 +860,7 @@ var public_vars = public_vars || {};
 				});
 			});
 		}
-		
-		
-		
-		
+
 		// Input Mask
 		if($.isFunction($.fn.inputmask))
 		{
@@ -1006,10 +933,7 @@ var public_vars = public_vars || {};
 				$this.inputmask(mask, opts);
 			});
 		}
-		
-		
-		
-		
+
 		// Form Validation
 		if($.isFunction($.fn.validate))
 		{
@@ -1045,8 +969,7 @@ var public_vars = public_vars || {};
 						}
 					},
 					$fields = $this.find('[data-validate]');
-				
-					
+
 				$fields.each(function(j, el2)
 				{
 					var $field = $(el2),
@@ -1101,10 +1024,7 @@ var public_vars = public_vars || {};
 				$this.validate(opts);
 			});
 		}
-		
-		
-		
-		
+
 		// Replaced File Input
 		$("input.file2[type=file]").each(function(i, el)
 		{
@@ -1113,28 +1033,19 @@ var public_vars = public_vars || {};
 			
 			$this.bootstrapFileInput(label);
 		});
-		
-		
-		
-		
+
 		// Jasny Bootstrap | Fileinput
 		if($.isFunction($.fn.fileinput))
 		{
 			$(".fileinput").fileinput()
 		}
-		
-		
-		
-		
+
 		// Multi-select
 		if($.isFunction($.fn.multiSelect))
 		{
 			$(".multi-select").multiSelect();
 		}
-		
-		
-		
-		
+
 		// Form Wizard
 		if($.isFunction($.fn.bootstrapWizard))
 		{
@@ -1160,8 +1071,7 @@ var public_vars = public_vars || {};
 						
 				  		return true;
 					};
-				
-				
+
 				$this.bootstrapWizard({
 					tabClass: "",
 			  		onTabShow: function($tab, $navigation, index)
@@ -1181,10 +1091,7 @@ var public_vars = public_vars || {};
 			  	});*/
 			});
 		}
-		
-		
-		
-		
+
 		// Wysiwyg Editor
 		if($.isFunction($.fn.wysihtml5))
 		{
@@ -1198,10 +1105,7 @@ var public_vars = public_vars || {};
 				});
 			});
 		}
-		
-		
-		
-		
+
 		// CKeditor WYSIWYG
 		if($.isFunction($.fn.ckeditor))
 		{
@@ -1209,16 +1113,10 @@ var public_vars = public_vars || {};
 				contentsLangDirection: rtl() ? 'rtl' : 'ltr'
 			});
 		}
-		
-		
-		
-		
+
 		// Checkbox/Radio Replacement
 		replaceCheckboxes();
-		
-		
-		
-		
+
 		// Tile Progress
 		$(".tile-progress").each(function(i, el)
 		{
@@ -1252,10 +1150,7 @@ var public_vars = public_vars || {};
 				});
 			}
 		});
-		
-		
-		
-		
+
 		// Tile Stats
 		$(".tile-stats").each(function(i, el)
 		{
@@ -1294,10 +1189,7 @@ var public_vars = public_vars || {};
 				}
 			}
 		});
-		
-		
-		
-		
+
 		// Tocify Table
 		if($.isFunction($.fn.tocify) && $("#toc").length)
 		{
@@ -1319,9 +1211,7 @@ var public_vars = public_vars || {};
 				$($this.get(0)).toggleClass('fixed', this.isAboveViewport)
 			});
 		}
-		
-		
-		
+
 		// Modal Static
 		public_vars.$body.on('click', '.modal[data-backdrop="static"]', function(ev)
 		{
@@ -1336,8 +1226,7 @@ var public_vars = public_vars || {};
 				tt.play();
 			}
 		});
-		
-		
+
 		// Added on v1.1
 		
 		// Sidebar User Links Popup
@@ -1365,8 +1254,7 @@ var public_vars = public_vars || {};
 			}
 		}
 		// End of: Added on v1.1
-		
-		
+
 		// Added on v1.1.4
 		$(".input-spinner").each(function(i, el)
 		{
@@ -1380,8 +1268,7 @@ var public_vars = public_vars || {};
 				
 				min = attrDefault($input, 'min', null),
 				max = attrDefault($input, 'max', null);
-				
-			
+
 			$this.find('button').on('click', function(ev)
 			{
 				ev.preventDefault();
@@ -1418,8 +1305,7 @@ var public_vars = public_vars || {};
 			});
 			
 		});
-		
-		
+
 		// Search Results Tabs
 		var $search_results_env = $(".search-results-env");
 		
@@ -1445,10 +1331,7 @@ var public_vars = public_vars || {};
 			});
 		}
 		// End of: Added on v1.1.4
-		
-		
-		
-		
+
 		// Fit main content height
 		fit_main_content_height();
 		
@@ -1469,8 +1352,6 @@ var public_vars = public_vars || {};
 		
 	});
 
-
-
 	// Enable/Disable Resizable Event
 	var wid = 0;
 	
@@ -1479,8 +1360,6 @@ var public_vars = public_vars || {};
 		wid = setTimeout(trigger_resizable, 200);
 	});
 
-	
-	
 })(jQuery, window);
 
 
@@ -1535,7 +1414,6 @@ function fit_main_content_height()
 			fit_calendar_container_height();
 	}
 }
-
 
 // Sidebar Menu Setup
 function setup_sidebar_menu()
@@ -1634,14 +1512,12 @@ function setup_sidebar_menu()
 			$search_el.removeClass('focused');
 		}
 	});
-	
-	
+
 	// Collapse Icon (mobile device visible)
 	var show_hide_menu = $('');
 	
 	public_vars.$sidebarMenu.find('.logo-env').append(show_hide_menu);
 }
-
 
 function menu_do_expand($submenu, $this, options)
 {
@@ -1679,7 +1555,6 @@ function menu_do_expand($submenu, $this, options)
 	}});
 }
 
-
 function menu_do_collapse($submenu, $this, options)
 {
 	if(public_vars.$pageContainer.hasClass('sidebar-collapsed') && $this.hasClass('root-level'))
@@ -1696,7 +1571,6 @@ function menu_do_collapse($submenu, $this, options)
 	}});
 }
 
-
 function menu_set_active_class_to_parents($active_element)
 {
 	if($active_element.length)
@@ -1709,8 +1583,6 @@ function menu_set_active_class_to_parents($active_element)
 			menu_set_active_class_to_parents($parent)
 	}
 }
-
-
 
 // Horizontal Menu Setup
 function setup_horizontal_menu()
@@ -1778,8 +1650,7 @@ function setup_horizontal_menu()
 		});
 		
 	});
-	
-	
+
 	// Search Input
 	if($search.hasClass('search-input-collapsed'))
 	{
@@ -1847,8 +1718,6 @@ function setup_horizontal_menu_hover($item, $sub)
 	
 }
 
-
-
 // Block UI Helper
 function blockUI($el)
 {
@@ -1872,7 +1741,6 @@ function unblockUI($el)
 	$el.unblock();
 }
 
-
 // Element Attribute Helper
 function attrDefault($el, data_var, default_val)
 {
@@ -1884,8 +1752,6 @@ function attrDefault($el, data_var, default_val)
 	return default_val;
 }
 
-
-
 // Test function
 function callback_test()
 {
@@ -1893,7 +1759,6 @@ function callback_test()
 	
 	console.log(arguments);
 }
-
 
 // Root Wizard Current Tab
 function setCurrentProgressTab($rootwizard, $nav, $tab, $progress, index)
@@ -1921,8 +1786,7 @@ function setCurrentProgressTab($rootwizard, $nav, $tab, $progress, index)
 			$progress.width( ((index-1) /(items-1)) * 100 + '%' ); //$progress.width( $tab.prev().position().left - $tab.find('span').width()/2 );
 		}
 	}
-	
-	
+
 	$progress.parent().css({
 		marginLeft: margin,
 		marginRight: margin
@@ -1935,7 +1799,6 @@ function setCurrentProgressTab($rootwizard, $nav, $tab, $progress, index)
 		marginRight: m
 	});*/
 }
-
 
 // Replace Checkboxes
 function replaceCheckboxes()
@@ -1985,8 +1848,6 @@ function replaceCheckboxes()
 	});
 }
 
-
-
 // Scroll to Bottom
 function scrollToBottom($el)
 {
@@ -1997,7 +1858,6 @@ function scrollToBottom($el)
 		
 	$el.get(0).scrollTop = $el.get(0).scrollHeight;
 }
-
 
 // Check viewport visibility (entrie element)
 function elementInViewport(el) 
@@ -2058,7 +1918,6 @@ function init_page_transitions()
 		}
 	}
 }
-
 
 // Page Visibility API
 function onPageAppear(callback) 
