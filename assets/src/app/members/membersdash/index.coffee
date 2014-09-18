@@ -4,10 +4,10 @@ class App extends App('members.dash')
 
 class config extends Config('members.dash')
   constructor: ($stateProvider) ->
-    $stateProvider.state 'dashboard',
+    $stateProvider.state 'members.dash',
       url: '/members'
       views:
-        main:
+        '':
           controller: 'MembersDashCtrl'
           templateUrl: 'members/membersdash/index.tpl.html'
 

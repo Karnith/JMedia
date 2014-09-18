@@ -4,10 +4,10 @@ class App extends App('members.users')
 
 class Config extends Config('members.users')
   constructor: ($stateProvider)->
-    $stateProvider.state 'users',
+    $stateProvider.state 'members.users',
       url: '/users'
       views:
-        main:
+        '':
           controller: 'UserCtrl'
           templateUrl: 'members/users/index.tpl.html'
       data:

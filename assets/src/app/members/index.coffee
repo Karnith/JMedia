@@ -9,8 +9,10 @@ class config extends Config('members')
   constructor: ($stateProvider) ->
     $stateProvider.state 'members',
       abstract: true
-      template: '<ui-view/>'
-      controller: 'MembersCtrl'
+      views:
+        main:
+          template: '<ui-view/>'
+          controller: 'MembersCtrl'
 
 
 class MembersCtrl extends Controller('members')
