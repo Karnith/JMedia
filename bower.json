@@ -29,9 +29,9 @@
     "angular-translate": "~2.2.0",
     "angular-translate-loader-static-files": "~2.2.0",
     "angular-ui-router": "~0.2.11",
-    "angular-ui-utils": "~0.1.1",
     "lodash": "~2.4.1",
-    "socket.io-client": "~1.1.0"
+    "socket.io-client": "~1.1.0",
+    "angular-ui-utils": "bower"
   },
   "overrides": {
     "angular": {
@@ -75,8 +75,7 @@
     },
     "angular-sanitize": {
       "main": [
-        "./**/*.min.js",
-        "./**/*.min.js.map"
+        "./**/*/**/*.min.js.map"
       ]
     },
     "angular-translate": {
@@ -154,15 +153,15 @@
     },
     "ng-ckeditor": {
       "main": [
-          "./*.min.*",
-          "./libs/ckeditor/ckeditor.js",
-          "./libs/ckeditor/config.js",
-          "./libs/ckeditor/styles.js",
-          "./libs/ckeditor/contents.css",
-          "./libs/ckeditor/adapters/**/*",
-          "./libs/ckeditor/lang/**/*",
-          "./libs/ckeditor/plugins/**/*",
-          "./libs/ckeditor/skins/**/*"
+        "./*.min.*",
+        "./libs/ckeditor/ckeditor.js",
+        "./libs/ckeditor/config.js",
+        "./libs/ckeditor/styles.js",
+        "./libs/ckeditor/contents.css",
+        "./libs/ckeditor/adapters/**/*",
+        "./libs/ckeditor/lang/**/*",
+        "./libs/ckeditor/plugins/**/*",
+        "./libs/ckeditor/skins/**/*"
       ]
     },
     "ng-table-extend": {
@@ -179,7 +178,8 @@
     }
   },
   "resolutions": {
-    "angular": "~1.3.0"
+    "angular": "~1.3.0",
+    "angular-ui-utils": "bower"
   },
   "name": "JMedia",
   "version": "0.0.1",

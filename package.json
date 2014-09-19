@@ -44,6 +44,7 @@
     "sails-generate-auth": "^0.1.6",
     "sails-memory": "^0.10.3",
     "sails-mongo": "^0.10.4",
+    "skipper-gridfs": "^0.5.1",
     "validator": "^3.17.1",
     "waterlock": "*",
     "waterlock-local-auth": "git://github.com/Karnith/waterlock-local-auth.git",
