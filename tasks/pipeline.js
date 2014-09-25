@@ -36,6 +36,7 @@ var jsFilesToInject = [
   // Load sails.io before everything else
   'vendor/socket.io-client/socket.io.js',
   'js/dependencies/sails.io.js',
+  'js/socketConfig.js',
 
   // Dependencies like jQuery, or Angular are brought in here
   'js/dependencies/**/*.js',
@@ -50,7 +51,6 @@ var jsFilesToInject = [
   'vendor/angular-translate/angular-translate.min.js',
   'vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js',
   'vendor/ng-table/ng-table.js',
-  '/vendor/ng-ckeditor/libs/ckeditor/ckeditor.js',
   'vendor/**/*.js',
   'src/**/*.js',
 
@@ -92,11 +92,20 @@ module.exports.ngTemplateFilesToInject = ngTemplateFilesToInject.map(function(pa
   return 'assets/' + path;
 });
 module.exports.cssFilesToInject = cssFilesToInject.map(function(path) {
+    return 'app/' + path;
+});
+module.exports.jsFilesToInject = jsFilesToInject.map(function(path) {
+    return 'app/' + path;
+});
+
+/*
+module.exports.cssFilesToInject = cssFilesToInject.map(function(path) {
   return '.tmp/public/' + path;
 });
 module.exports.jsFilesToInject = jsFilesToInject.map(function(path) {
   return '.tmp/public/' + path;
 });
+*/
 module.exports.templateFilesToInject = templateFilesToInject.map(function(path) {
   return 'assets/' + path;
 });

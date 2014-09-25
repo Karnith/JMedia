@@ -13,8 +13,8 @@
  */
 module.exports = function(gulp, plugins, growl) {
 	gulp.task('copy:dev', function() {
-		return gulp.src(['./assets/**/*.!(coffee|less)', '!assets/images{,/**}', '!assets/src/app/**/*.html'])
-				.pipe(gulp.dest('.tmp/public'))
+		return gulp.src(['./assets/**/*.!(coffee|less)', '!assets/images{,/**}', '!assets/src/{,/**}'])
+				.pipe(gulp.dest('app'))
 				.pipe(plugins.if(growl, plugins.notify({ message: 'Copy dev task complete' })));
 	});
 	gulp.task('copy:build', function() {

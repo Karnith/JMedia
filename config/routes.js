@@ -35,13 +35,16 @@ module.exports.routes = {
     /**
      * We set the default language for all routes
      * **/
-    '/*': function(req, res, next) {
+/*
+    '*/
+/*': function(req, res, next) {
         // res.setLocale(req.param('lang') || sails.config.i18n.defaultLocale);
         res.setLocale(sails.config.i18n.defaultLocale);
         return next();
     },
+*/
 
-    'get /': 'HomeController.index',
+//    'get /': 'HomeController.index',
 //    '/': {view: 'index'},
 
     /*
@@ -55,11 +58,13 @@ module.exports.routes = {
     'post /members/validation': {controller: 'auth/MembersController', action: 'validation'},
     '/account/details/:id': {controller: 'user/AccountController', action: 'details'},
     */
+/*
     'post /auth/reset': 'AuthController.reset',
     'get /auth/reset': 'AuthController.reset',
     'get /auth/:provider': 'AuthController.provider',
     'get /auth/:provider/callback': 'AuthController.callback',
     'get /auth/:provider/:action': 'AuthController.callback',
+*/
 
     /***************************************************************************
     *                                                                          *
@@ -74,20 +79,42 @@ module.exports.routes = {
     /**
      * User routes
      */
-    'get /api/user': 'UserController.getAll',
-    'get /api/user/:id': 'UserController.getOne',
+/*
+    'get /api/user': {
+        controller: 'UserController',
+        action: 'getAll'
+    },
+    'get /api/user/:id': {
+        controller: 'UserController',
+        action: 'getOne'
+    },
 //    'get /api/user/subscribe': 'UserController.subscribe',
-    'post /api/user': 'UserController.create',
+    'post /api/user': {
+        controller: 'UserController',
+        action: 'create'
+    },
+    'get /user/subscribe': {
+        controller: 'UserController',
+        action: 'subscribe'
+    },
+*/
 
 
     // If a request to a URL doesn't match any of the custom routes above, it is matched
     // against Sails route blueprints.  See `config/blueprints.js` for configuration options
     // and examples.
-    'get /about': 'HomeController.index',
-    'get /home': 'HomeController.index',
-    'get /login': 'HomeController.index',
+//    'get /about': 'HomeController.index',
+//    'get /home': 'HomeController.index',
+//    'get /login': 'HomeController.index',
 //    'get /members': 'HomeController.index',
 //    'get /users': 'HomeController.index',
-    'get /register': 'HomeController.index'
-
+//    'get /register': 'HomeController.index'
+/*
+    '*/
+/*': {
+        controller: 'HomeController',
+        action: "index",
+        skipAssets: true
+    }
+*/
 };

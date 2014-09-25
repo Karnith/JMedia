@@ -19,7 +19,7 @@ module.exports = function(gulp, plugins, growl) {
                    }
                 }))
                 .pipe(plugins.concat('jst.js'))
-				.pipe(gulp.dest('.tmp/public'))
+				.pipe(gulp.dest('app'))
 				.pipe(plugins.if(growl, plugins.notify({ message: 'jst dev task complete' })));
 	});
 };

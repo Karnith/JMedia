@@ -30,6 +30,15 @@
             + Use a different or additional preprocessor, like SASS, SCSS or Stylus
     -->
     <!--STYLES-->
+    <link rel="stylesheet" href="/vendor/angular-rx-data-table/dist/styles/rx-data-table.min.css">
+    <link rel="stylesheet" href="/vendor/angular-xeditable/dist/css/xeditable.css">
+    <link rel="stylesheet" href="/vendor/angular/angular-csp.css">
+    <link rel="stylesheet" href="/vendor/bootstrapValidator/dist/css/bootstrapValidator.min.css">
+    <link rel="stylesheet" href="/vendor/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/ng-table/ng-table.css">
+    <link rel="stylesheet" href="/styles/custom.css">
+    <link rel="stylesheet" href="/styles/default.css">
+    <link rel="stylesheet" href="/styles/importer.css">
     <!--STYLES END-->
 <!--
     <script type="text/javascript">
@@ -153,6 +162,81 @@
 -->
 
 <!--SCRIPTS-->
+<script src="/vendor/jquery/dist/jquery.min.js"></script>
+<script src="/vendor/socket.io-client/socket.io.js"></script>
+<script src="/js/dependencies/sails.io.js"></script>
+<script src="/vendor/angular/angular.js"></script>
+<script src="/vendor/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="/vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="/vendor/angular-ui-utils/ui-utils.min.js"></script>
+<script src="/vendor/angular-sails/dist/angular-sails.min.js"></script>
+<script src="/vendor/lodash/dist/lodash.min.js"></script>
+<script src="/vendor/angular-moment/angular-moment.min.js"></script>
+<script src="/vendor/angular-translate/angular-translate.min.js"></script>
+<script src="/vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+<script src="/vendor/ng-table/ng-table.js"></script>
+<script src="/vendor/angular-animate/angular-animate.min.js"></script>
+<script src="/vendor/angular-mocks/angular-mocks.js"></script>
+<script src="/vendor/angular-route/angular-route.min.js"></script>
+<script src="/vendor/angular-rx-data-table/dist/scripts/rx-data-table.js"></script>
+<script src="/vendor/angular-ui-utils/ui-utils-ieshiv.min.js"></script>
+<script src="/vendor/angular-xeditable/dist/js/xeditable.min.js"></script>
+<script src="/vendor/bootstrap3-switch/build/js/bootstrap-switch.min.js"></script>
+<script src="/vendor/bootstrapValidator/dist/js/bootstrapValidator.min.js"></script>
+<script src="/vendor/es5-shim/es5-sham.min.js"></script>
+<script src="/vendor/es5-shim/es5-shim.min.js"></script>
+<script src="/vendor/greensock/src/minified/TimelineMax.min.js"></script>
+<script src="/vendor/greensock/src/minified/TweenMax.min.js"></script>
+<script src="/vendor/greensock/src/minified/easing/EasePack.min.js"></script>
+<script src="/vendor/greensock/src/minified/jquery.gsap.min.js"></script>
+<script src="/vendor/greensock/src/minified/plugins/AttrPlugin.min.js"></script>
+<script src="/vendor/greensock/src/minified/plugins/BezierPlugin.min.js"></script>
+<script src="/vendor/greensock/src/minified/plugins/CSSPlugin.min.js"></script>
+<script src="/vendor/greensock/src/minified/plugins/CSSRulePlugin.min.js"></script>
+<script src="/vendor/greensock/src/minified/plugins/ColorPropsPlugin.min.js"></script>
+<script src="/vendor/greensock/src/minified/plugins/DirectionalRotationPlugin.min.js"></script>
+<script src="/vendor/greensock/src/minified/plugins/EaselPlugin.min.js"></script>
+<script src="/vendor/greensock/src/minified/plugins/EndArrayPlugin.min.js"></script>
+<script src="/vendor/greensock/src/minified/plugins/KineticPlugin.min.js"></script>
+<script src="/vendor/greensock/src/minified/plugins/RaphaelPlugin.min.js"></script>
+<script src="/vendor/greensock/src/minified/plugins/RoundPropsPlugin.min.js"></script>
+<script src="/vendor/greensock/src/minified/plugins/ScrollToPlugin.min.js"></script>
+<script src="/vendor/greensock/src/minified/plugins/TextPlugin.min.js"></script>
+<script src="/vendor/greensock/src/minified/utils/Draggable.min.js"></script>
+<script src="/vendor/jqueryui/jquery-ui.min.js"></script>
+<script src="/vendor/json3/lib/json3.min.js"></script>
+<script src="/vendor/lodash/dist/lodash.compat.min.js"></script>
+<script src="/vendor/lodash/dist/lodash.underscore.min.js"></script>
+<script src="/vendor/moment/min/moment-with-locales.min.js"></script>
+<script src="/src/app/about/index.js"></script>
+<script src="/src/app/app.js"></script>
+<script src="/src/app/auth/index.js"></script>
+<script src="/src/app/auth/login.js"></script>
+<script src="/src/app/auth/register.js"></script>
+<script src="/src/app/header/index.js"></script>
+<script src="/src/app/home/index.js"></script>
+<script src="/src/app/members/index.js"></script>
+<script src="/src/app/members/membersdash/index.js"></script>
+<script src="/src/app/members/users/index.js"></script>
+<script src="/src/common/directives/blink.js"></script>
+<script src="/src/common/directives/chat.js"></script>
+<script src="/src/common/directives/index.js"></script>
+<script src="/src/common/directives/mainMenu.js"></script>
+<script src="/src/common/directives/userMenu.js"></script>
+<script src="/src/common/models/User.js"></script>
+<script src="/src/common/models/index.js"></script>
+<script src="/src/common/services/config.js"></script>
+<script src="/src/common/services/index.js"></script>
+<script src="/src/common/services/lodash.js"></script>
+<script src="/src/common/services/title.js"></script>
+<script src="/src/common/services/utils.js"></script>
+<script src="/themes/default/js/joinable.js"></script>
+<script src="/themes/default/js/resizeable.js"></script>
+<script src="/themes/default/js/neon-api.js"></script>
+<script src="/themes/default/js/neon-custom.js"></script>
+<script src="/js/customValidate.js"></script>
+<script src="/js/password.js"></script>
+<script src="/js/socketApp.js"></script>
 <!--SCRIPTS END-->
 
 <!--
@@ -177,6 +261,7 @@
     -->
 
 <!--TEMPLATES-->
+<script type="text/javascript" src="/templates.js"></script>
 <!--TEMPLATES END-->
 
 </body>

@@ -5,7 +5,7 @@ class App extends App('sailng.home')
 class Config extends Config('sailng.home')
   constructor: ($stateProvider)->
     $stateProvider.state 'home',
-      url: '/home'
+      url: '/'
       views:
         main:
           controller: 'HomeCtrl'

@@ -10,7 +10,7 @@ class UserModel extends Service('models.user')
   constructor: ($q, lodash, utils, $sails) ->
     @getAll = ->
       deferred = $q.defer()
-      url = utils.prepareUrl("user")
+      url = utils.prepareUrl("user/getall")
       $sails.get url, (models) ->
         deferred.resolve models
       deferred.promise

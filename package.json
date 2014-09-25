@@ -29,6 +29,7 @@
     "gulp-template-compile": "^0.2.0",
     "gulp-uglify": "^0.3.1",
     "gulp-util": "3.0.0",
+    "gulp-webserver": "^0.8.1",
     "include-all": "~0.1.3",
     "main-bower-files": "*",
     "passport": "^0.2.1",

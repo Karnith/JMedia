@@ -19,12 +19,7 @@ class App extends App('sailng')
     ]
 class myAppConfig extends Config('sailng')
   constructor: ($stateProvider, $urlRouterProvider, $locationProvider)->
-    $urlRouterProvider.otherwise ($injector, $location)->
-      if $location.$$url is "/"
-        window.location = "/home"
-      else
-        # pass through to let the web server handle this request
-        window.location = $location.$$absUrl
+    $urlRouterProvider.otherwise '/'
     $locationProvider.html5Mode true
 class Run extends Run('sailng')
   constructor: ->

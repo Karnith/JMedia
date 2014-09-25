@@ -9,7 +9,7 @@ class utils extends Service('services.utils')
     return {
       prepareUrl: (uriSegments) ->
         if lodash.isNull(config.apiUrl)
-          apiUrl = "https://api.test"
+          apiUrl = "http://localhost:1337"
         else
           apiUrl = config.apiUrl
         apiUrl + "/" + uriSegments
