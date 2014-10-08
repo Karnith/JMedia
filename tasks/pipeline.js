@@ -21,6 +21,7 @@ var cssFilesToInject = [
   'vendor/bootstrapValidator/dist/css/bootstrapValidator.min.css',
   'vendor/fontawesome/css/font-awesome.min.css',
   'vendor/ng-table/ng-table.css',
+  'styles/neon.css',
   'styles/**/*.css'
 ];
 
@@ -29,30 +30,31 @@ var cssFilesToInject = [
 // (uses Grunt-style wildcard/glob/splat expressions)
 var jsFilesToInject = [
 
-  'vendor/jquery/dist/jquery.min.js',
-  'vendor/bootstrap/dist/js/bootstrap.min.js',
-  'vendor/greensock/*.js',
+    'vendor/jquery/dist/*.min.js',
+    'vendor/gsap/**/*.js',
+    'themes/default/js/bootstrap.js',
 
-  // Load sails.io before everything else
-  'vendor/socket.io-client/socket.io.js',
-  'js/dependencies/sails.io.js',
-  'js/socketConfig.js',
+    // Load sails.io before everything else
+    'vendor/socket.io-client/socket.io.js',
+    'js/dependencies/sails.io.js',
+    'js/socketConfig.js',
 
-  // Dependencies like jQuery, or Angular are brought in here
-  'js/dependencies/**/*.js',
-  'vendor/angular/angular.js',
-  'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
-  'vendor/angular-ui-router/release/angular-ui-router.min.js',
-  'vendor/angular-ui-utils/ui-utils.min.js',
-  'vendor/angular-sails/dist/angular-sails.min.js',
-  'vendor/lodash/dist/lodash.min.js',
-  'vendor/moment/moment-locales.min.js',
-  'vendor/angular-moment/angular-moment.min.js',
-  'vendor/angular-translate/angular-translate.min.js',
-  'vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js',
-  'vendor/ng-table/ng-table.js',
-  'vendor/**/*.js',
-  'src/**/*.js',
+    // Dependencies like jQuery, or Angular are brought in here
+    'js/dependencies/**/*.js',
+    'vendor/angular/**/*.js',
+    'vendor/angular-bootstrap/**/*.min.js',
+    'vendor/angular-ui-router/**/*.min.js',
+    'vendor/angular-ui-utils/**/*.min.js',
+    'vendor/angular-sails/**/*.min.js',
+    'vendor/moment/**/*.min.js',
+    'vendor/angular-moment/**/*.min.js',
+    'vendor/angular-translate/**/*.min.js',
+    'vendor/angular-translate-loader-static-files/**/*.min.js',
+    'vendor/ng-table/**/*.js',
+    'vendor/isotope/**/*.js',
+    'vendor/**/*.js',
+    'src/**/*.js',
+//    'src/app/app.js',
 
 //    'themes/default/js/gsap/main-gsap.js',
     'themes/default/js/joinable.js',
@@ -61,11 +63,10 @@ var jsFilesToInject = [
     'themes/default/js/neon-custom.js',
 //    'themes/default/js/neon-demo.js',
 
-  // All of the rest of your client-side js files
-  // will be injected here in no particular order.
+    // All of the rest of your client-side js files
+    // will be injected here in no particular order.
     'js/**/*.js'
 ];
-
 
 // Client-side HTML templates are injected using the sources below
 // The ordering of these templates shouldn't matter.

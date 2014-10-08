@@ -21,7 +21,7 @@ module.exports = function(gulp, plugins, growl) {
                 middleware: [],
                 proxies: [{
                     source: '/api',
-                    target: 'localhost:1337/api'
+                    target: 'http://localhost:1337/api'
                 }]
 
             }))

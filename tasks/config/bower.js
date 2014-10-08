@@ -20,4 +20,4 @@ module.exports = function(gulp, plugins, growl) {
 				.pipe(gulp.dest('./assets/vendor'))
 				.pipe(plugins.if(growl, plugins.notify({ message: 'Bower copy task complete' })));
 	});
-}
+};

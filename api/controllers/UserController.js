@@ -28,13 +28,15 @@ module.exports = require('waterlock').actions.user({
     getAll: function(req, res) {
         User.getAll()
             .spread(function(models) {
-//                console.log('in getAll users', models);
+                console.log('in getAll users', models);
                 res.json({data:models});
             })
+/*
             .fail(function(err) {
                 // An error occured
                 sails.log.error(err);
             });
+*/
     },
 
 

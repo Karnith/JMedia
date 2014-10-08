@@ -12,5 +12,5 @@ class chat extends Directive('chat')
   constructor: ->
     return {
     restrict: 'E'
-    templateUrl: 'chat/index.tpl.html'
+    templateUrl: 'services/chat/chat.tpl.html'
     }

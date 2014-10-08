@@ -1,16 +1,12 @@
 class App extends App('models.user')
   constructor: ->
-    return [
-      "lodash"
-      "services"
-      "ngSails"
-    ]
+    return []
 
 class UserModel extends Service('models.user')
   constructor: ($q, lodash, utils, $sails) ->
     @getAll = ->
       deferred = $q.defer()
-      url = utils.prepareUrl("user/getall")
+      url = utils.prepareUrl("user/getAll")
       $sails.get url, (models) ->
         deferred.resolve models
       deferred.promise

@@ -4,5 +4,4 @@ class App extends App('services')
       "services.config"
       "services.utils"
       "services.title"
-      "lodash"
     ]

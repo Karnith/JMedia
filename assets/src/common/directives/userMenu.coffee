@@ -12,5 +12,5 @@ class userMenu extends Directive('userMenu')
   constructor: ->
     return {
     restrict: 'E'
-    templateUrl: 'menus/usermenu/index.tpl.html'
+    templateUrl: 'menus/usermenu/usermenu.tpl.html'
     }

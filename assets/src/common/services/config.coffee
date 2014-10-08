@@ -6,7 +6,7 @@ class config extends Service('services.config')
   constructor: (lodash) ->
     # private vars here if needed
     return {
-      siteName: "MEANS Seed"
+      siteName: "JMedia"
       # no trailing slash!
       siteUrl: "/"
       apiUrl: "/api"

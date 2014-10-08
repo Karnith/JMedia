@@ -4,7 +4,7 @@ class App extends App('services.title')
 
 class titleService extends Factory('services.title')
   constructor: ($document) ->
-    suffix = title = " - MEANS Seed Project"
+    suffix = title = " - JMedia Media Center"
     return {
     setSuffix: (s) ->
       suffix = s

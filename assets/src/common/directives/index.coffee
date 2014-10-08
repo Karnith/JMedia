@@ -1,7 +1,7 @@
 class App extends App('directives')
   constructor: ->
     return [
-      "mainMenu"
-      "chat"
+      'mainMenu'
+      'chat'
       'userMenu'
     ]

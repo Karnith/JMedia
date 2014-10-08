@@ -1,8 +1,8 @@
 io.socket.on('connect', function() {
     io.socket.on('user', cometUserMessageReceivedFromServer);
 
-    io.socket.get('/user/subscribe');
-//    io.socket.get('/api/user/subscribe');
+//    io.socket.get('/user/subscribe');
+    io.socket.get('/api/user/subscribe');
 });
 
 function cometUserMessageReceivedFromServer(message) {

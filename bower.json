@@ -7,34 +7,55 @@
     "tests"
   ],
   "dependencies": {
-    "angular-rx-data-table": "~0.5.12",
     "bootstrap": "~3.2.0",
     "bootstrapValidator": "~0.5.0",
     "fontawesome": "~4.2.0",
     "jquery": "~2.1.1",
-    "ng-table": "~0.3.3",
     "jqueryui": "~1.11.1",
     "jQueryValidate": "*",
-    "bootstrap3-switch": "~0.1.1",
-    "greensock": "~1.13.2"
+    "angular-messages": "~1.3.0-rc.3",
+    "angular-xeditable": "*",
+    "angular-gsapify-router": "*",
+    "gsap": "~1.13.2",
+    "ng-table": "~0.3.3",
+    "ngstorage": "~0.3.0",
+    "restangular": "~1.4.0",
+    "ng-lodash": "~0.0.2",
+    "ng-bs-daterangepicker": "~0.0.3",
+    "bootstrap-daterangepicker": "~1.3.13",
+    "fullcalendar": "~2.1.1",
+    "dropzone": "~3.10.2",
+    "angular-dropzone": "~0.1.1",
+    "angular-rickshaw": "~0.3.0",
+    "responsive-tables": "*",
+    "ng-jcrop": "~1.0.2",
+    "angular-isotope": "~0.1.14",
+    "isotope": "~2.0.1",
+    "ui-router-extras": "latest",
+    "angular-touch": "~1.2.25",
+    "angular-sanitize": "~1.2.25",
+    "uikit": "~2.10.0",
+    "ui-select": "*",
+    "angular-bootstrap-switch": "~0.3.0",
+    "oclazyload": "~0.3.8"
   },
   "devDependencies": {
     "angular": "~1.3.0",
     "angular-bootstrap": "~0.11.0",
-    "angular-mocks": "~1.2.23",
+    "angular-mocks": "~1.3.0",
     "angular-moment": "~0.8.1",
     "angular-sails": "~1.0.4",
-    "angular-translate": "~2.2.0",
-    "angular-translate-loader-static-files": "~2.2.0",
+    "angular-translate": "~2.4.0",
+    "angular-translate-loader-static-files": "~2.4.0",
     "angular-ui-router": "~0.2.11",
-    "lodash": "~2.4.1",
     "socket.io-client": "~1.1.0",
     "angular-ui-utils": "bower"
   },
   "overrides": {
     "angular": {
       "main": [
-        "./**/angular.js",
+        "./**/*.min.js",
+        "./**/*.map",
         "./**/*.css"
       ]
     },
@@ -45,7 +66,24 @@
       ]
     },
     "angular-bootstrap": {
-      "main": "./**/*tpls.min.js"
+      "main": "./**/*.min.js"
+    },
+    "angular-bootstrap-switch": {
+      "main": [
+        "./dist/**/*.min.js"
+      ]
+    },
+    "angular-dropzone": {
+      "main": "./**/*.js"
+    },
+    "angular-isotope": {
+      "main": "./dist/**/*.min.js"
+    },
+    "angular-messages": {
+      "main": [
+        "./**/*.min.js",
+        "./**/*.min.js.map"
+      ]
     },
     "angular-mocks": {
       "main": "./angular-mocks.js"
@@ -53,13 +91,18 @@
     "angular-moment": {
       "main": [
         "./**/*.min.js",
-        "./**/*.min.js.map"
+        "./**/*.map"
+      ]
+    },
+    "angular-rickshaw": {
+      "main": [
+        "./**/*.min.js"
       ]
     },
     "angular-route": {
       "main": [
         "./**/*.min.js",
-        "./**/*.min.js.map"
+        "./**/*.map"
       ]
     },
     "angular-rx-data-table": {
@@ -73,7 +116,14 @@
     },
     "angular-sanitize": {
       "main": [
-        "./**/*/**/*.min.js.map"
+        "./**/*.min.js",
+        "./**/*.map"
+      ]
+    },
+    "angular-touch": {
+      "main": [
+        "./**/*.min.js",
+        "./**/*.map"
       ]
     },
     "angular-translate": {
@@ -99,15 +149,29 @@
         "./dist/fonts/*"
       ]
     },
-    "bootstrap3-switch": {
+    "bootstrap-daterangepicker": {
       "main": [
-        "./build/**/*.min.js"
+        "daterangepicker.js",
+        "daterangepicker-bs3.css"
       ]
     },
     "bootstrapValidator": {
       "main": [
+        "./dist/language/**/*",
         "./dist/**/*.min.js",
-        "./dist/**/*min.css"
+        "./dist/**/*.min.css"
+      ]
+    },
+    "d3": {
+      "main": [
+        "*.min.js"
+      ]
+    },
+    "dropzone": {
+      "main": [
+        "downloads/css/dropzone.css",
+        "downloads/dropzone.min.js",
+        "downloads/images/*"
       ]
     },
     "es5-shim": {
@@ -118,17 +182,40 @@
     },
     "fontawesome": {
       "main": [
-        "./css/**/*min.css",
+        "./css/**/*.min.css",
         "./fonts/*"
       ]
     },
-    "greensock": {
+    "fullcalendar": {
       "main": [
-        "./src/minified/easing/**/*min.js",
-        "./src/minified/plugins/**/*min.js",
-        "./src/minified/utils/**/*min.js",
-        "./src/minified/*Max.min.js",
-        "./src/minified/*gsap.min.js"
+        "dist/*.min.js",
+        "dist/gcal.js",
+        "dist/lang-all.js",
+        "dist/fullcalendar.css",
+        "dist/fullcalendar.print.css"
+      ]
+    },
+    "gsap": {
+      "main": [
+        "./src/minified/easing/*.js",
+        "./src/minified/plugins/*.js",
+        "./src/minified/utils/*.js",
+        "./src/minified/TimelineMax.min.js",
+        "./src/minified/TweenMax.min.js",
+        "./src/minified/*.gsap.min.js"
+      ]
+    },
+    "isotope": {
+      "main": [
+        "./dist/**/*.min.js"
+      ]
+    },
+    "jcrop": {
+      "main": [
+        "./js/*.Jcrop.min.js",
+        "./js/*.color.js",
+        "./css/*.gif",
+        "./css/*.Jcrop.css"
       ]
     },
     "jquery": {
@@ -144,10 +231,16 @@
       "main": "./**/*.min.js"
     },
     "lodash": {
+      "ignore": true
+    },
+    "masonary": {
       "main": "./**/*.min.js"
     },
     "moment": {
       "main": "./**/*-locales.min.js"
+    },
+    "ng-bs-daterangepicker": {
+      "main": "./dist/**/*.js"
     },
     "ng-ckeditor": {
       "main": [
@@ -162,6 +255,16 @@
         "./libs/ckeditor/skins/**/*"
       ]
     },
+    "ng-lodash": {
+      "main": [
+        "./**/*.min.js"
+      ]
+    },
+    "ngstorage": {
+      "main": [
+        "./**/*.min.js"
+      ]
+    },
     "ng-table-extend": {
       "main": [
         "./**/*.min.js",
@@ -169,15 +272,60 @@
         "./**/*.map"
       ]
     },
+    "responsive-tables": {
+      "main": [
+        "responsive-tables.js",
+        "responsive-tables.css"
+      ]
+    },
+    "restangular": {
+      "main": [
+        "./**/*.min.js"
+      ]
+    },
+    "rickshaw": {
+      "main": [
+        "./**/*.min.js",
+        "./**/*.css"
+      ]
+    },
+    "select2": {
+      "main": [
+        "*.min.js",
+        "select2-bootstrap.css",
+        "select2.png",
+        "select2x2.png",
+        "select2-spinner.gif"
+      ]
+    },
     "socket.io-client": {
       "main": [
         "./socket.io.js"
+      ]
+    },
+    "uikit": {
+      "main": [
+        "./dist/**/*.min.css",
+        "./dist/fonts/*",
+        "./dist/**/*.min.js"
+      ]
+    },
+    "ui-router-extras": {
+      "main": [
+        "./**/*.min.js"
+      ]
+    },
+    "ui-select": {
+      "main": [
+        "./src/select3.js"
       ]
     }
   },
   "resolutions": {
     "jquery": "~2.1.1",
-    "angular": "~1.3.0"
+    "angular": "~1.3.0",
+    "bootstrap": "~3.2.0",
+    "isotope": "~2.0.1"
   },
   "name": "JMedia",
   "version": "0.0.1",

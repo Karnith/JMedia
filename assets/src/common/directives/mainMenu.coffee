@@ -12,5 +12,5 @@ class mainMenu extends Directive('mainMenu')
   constructor: ->
     return {
       restrict: 'E'
-      templateUrl: 'menus/mainmenu/index.tpl.html'
+      templateUrl: 'menus/mainmenu/mainmenu.tpl.html'
     }
