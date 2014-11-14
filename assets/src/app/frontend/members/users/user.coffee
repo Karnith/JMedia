@@ -12,10 +12,11 @@ class Config extends Config('members.users')
         'content':
           controller: 'UserCtrl'
           templateUrl: 'frontend/members/users/user.tpl.html'
+      ncyBreadcrumb:
+        label: 'Members',
+        parent: 'members.dash'
       data:
         pageTitle: 'Members'
-        ncyBreadcrumbParent: 'members.dash'
-        ncyBreadcrumbLabel: 'Members'
 
 class UserCtrl extends Controller('members.users')
   constructor: ($scope, $sails, lodash, config, titleService, UserModel, $filter, ngTableParams)->

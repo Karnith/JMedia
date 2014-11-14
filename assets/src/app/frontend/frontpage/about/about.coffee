@@ -12,9 +12,10 @@ class config extends Config('landing.about')
         'content':
           controller: 'AboutCtrl'
           templateUrl: 'frontend/frontpage/about/about.tpl.html'
-      data:
-        ncyBreadcrumbParent: 'landing.home'
-        ncyBreadcrumbLabel: 'About'
+      ncyBreadcrumb:
+        label: 'About',
+        parent: 'landing.home'
+#      data:
 
 class AboutCtrl extends Controller('landing.about')
   constructor: ($scope, titleService) ->
