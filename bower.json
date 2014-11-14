@@ -1,0 +1,346 @@
+{
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrapValidator": "~0.5.0",
+    "fontawesome": "~4.2.0",
+    "jquery": "~2.1.1",
+    "jqueryui": "~1.11.1",
+    "jQueryValidate": "*",
+    "angular-messages": "~1.3.0-rc.3",
+    "angular-xeditable": "*",
+    "angular-gsapify-router": "*",
+    "ng-table": "~0.3.3",
+    "ngstorage": "~0.3.0",
+    "restangular": "~1.4.0",
+    "ng-lodash": "~0.0.2",
+    "ng-bs-daterangepicker": "~0.0.3",
+    "bootstrap-daterangepicker": "~1.3.13",
+    "fullcalendar": "~2.1.1",
+    "dropzone": "~3.10.2",
+    "angular-dropzone": "~0.1.1",
+    "responsive-tables": "*",
+    "angular-isotope": "~0.1.14",
+    "isotope": "~2.0.1",
+    "ui-router-extras": "latest",
+    "ui-select": "*",
+    "angular-bootstrap-switch": "~0.3.0",
+    "angular-sanitize": "~1.3.0",
+    "satellizer": "0.8.4",
+    "ng-jcrop": "1.1.1"
+  },
+  "devDependencies": {
+    "angular": "~1.3.0",
+    "angular-bootstrap": "~0.11.0",
+    "angular-mocks": "~1.3.0",
+    "angular-moment": "~0.8.1",
+    "angular-sails": "~1.0.4",
+    "angular-translate": "~2.4.0",
+    "angular-translate-loader-static-files": "~2.4.0",
+    "angular-ui-router": "~0.2.11",
+    "socket.io-client": "~1.2.0",
+    "angular-ui-utils": "bower"
+  },
+  "overrides": {
+    "angular": {
+      "main": [
+        "./**/*.min.js",
+        "./**/*.map",
+        "./**/*.css"
+      ]
+    },
+    "angular-animate": {
+      "main": [
+        "./**/*.min.js",
+        "./**/*.min.js.map"
+      ]
+    },
+    "angular-breadcrumb": {
+      "main": "./release/*.min.js"
+    },
+    "angular-bootstrap": {
+      "main": "./**/*.min.js"
+    },
+    "angular-bootstrap-switch": {
+      "main": [
+        "./dist/**/*.min.js"
+      ]
+    },
+    "angular-dropzone": {
+      "main": "./**/*.js"
+    },
+    "angular-isotope": {
+      "main": "./dist/**/*.min.js"
+    },
+    "angular-messages": {
+      "main": [
+        "./**/*.min.js",
+        "./**/*.min.js.map"
+      ]
+    },
+    "angular-mocks": {
+      "main": "./angular-mocks.js"
+    },
+    "angular-moment": {
+      "main": [
+        "./**/*.min.js",
+        "./**/*.map"
+      ]
+    },
+    "angular-rickshaw": {
+      "main": [
+        "./**/*.min.js"
+      ]
+    },
+    "angular-route": {
+      "main": [
+        "./**/*.min.js",
+        "./**/*.map"
+      ]
+    },
+    "angular-rx-data-table": {
+      "main": [
+        "./dist/**/*table.js",
+        "./dist/**/*.min.css"
+      ]
+    },
+    "angular-sails": {
+      "main": "./dist/**/*.min.js"
+    },
+    "angular-sanitize": {
+      "main": [
+        "./**/*.min.js",
+        "./**/*.map"
+      ]
+    },
+    "angular-touch": {
+      "main": [
+        "./**/*.min.js",
+        "./**/*.map"
+      ]
+    },
+    "angular-translate": {
+      "main": "./**/*.min.js"
+    },
+    "angular-translate-loader-static-files": {
+      "main": "./**/*.min.js"
+    },
+    "angular-ui-router": {
+      "main": "./release/**/*.min.js"
+    },
+    "angular-ui-utils": {
+      "main": "./**/*.min.js"
+    },
+    "angular-xeditable": {
+      "main": [
+        "./dist/**/*.min.js",
+        "./dist/**/*.css"
+      ]
+    },
+    "bootstrap": {
+      "main": [
+        "./dist/fonts/*"
+      ]
+    },
+    "bootstrap-daterangepicker": {
+      "main": [
+        "daterangepicker.js",
+        "daterangepicker-bs3.css"
+      ]
+    },
+    "bootstrapValidator": {
+      "main": [
+        "./dist/language/**/*",
+        "./dist/**/*.min.js",
+        "./dist/**/*.min.css"
+      ]
+    },
+    "d3": {
+      "main": [
+        "*.min.js"
+      ]
+    },
+    "dropzone": {
+      "main": [
+        "downloads/css/dropzone.css",
+        "downloads/dropzone.min.js",
+        "downloads/images/*"
+      ]
+    },
+    "es5-shim": {
+      "main": [
+        "./**/*.min.js",
+        "./**/*.map"
+      ]
+    },
+    "famous": {
+      "main": "./**/*.min.js"
+    },
+    "famous-angular": {
+      "main": [
+        "./dist/*.min.js",
+        "./dist/*angular.css"
+      ]
+    },
+    "fontawesome": {
+      "main": [
+        "./css/**/*.min.css",
+        "./fonts/*"
+      ]
+    },
+    "fullcalendar": {
+      "main": [
+        "dist/*.min.js",
+        "dist/gcal.js",
+        "dist/lang-all.js",
+        "dist/fullcalendar.css",
+        "dist/fullcalendar.print.css"
+      ]
+    },
+    "gsap": {
+      "main": [
+        "./src/minified/easing/*.js",
+        "./src/minified/plugins/*.js",
+        "./src/minified/utils/*.js",
+        "./src/minified/TimelineMax.min.js",
+        "./src/minified/TweenMax.min.js",
+        "./src/minified/*.gsap.min.js"
+      ]
+    },
+    "isotope": {
+      "main": [
+        "./dist/**/*.min.js"
+      ]
+    },
+    "jcrop": {
+      "main": [
+        "./js/*.Jcrop.min.js",
+        "./js/*.color.js",
+        "./css/*.gif",
+        "./css/*.Jcrop.css"
+      ]
+    },
+    "jquery": {
+      "main": [
+        "./dist/*.min.js",
+        "./dist/*.min.map"
+      ]
+    },
+    "jqueryui": {
+      "main": "./*.min.js"
+    },
+    "json3": {
+      "main": "./**/*.min.js"
+    },
+    "lodash": {
+      "ignore": true
+    },
+    "masonary": {
+      "main": "./**/*.min.js"
+    },
+    "moment": {
+      "main": "./**/*-locales.min.js"
+    },
+    "ng-bs-daterangepicker": {
+      "main": "./dist/**/*.js"
+    },
+    "ng-ckeditor": {
+      "main": [
+        "./*.min.*",
+        "./libs/ckeditor/ckeditor.js",
+        "./libs/ckeditor/config.js",
+        "./libs/ckeditor/styles.js",
+        "./libs/ckeditor/contents.css",
+        "./libs/ckeditor/adapters/**/*",
+        "./libs/ckeditor/lang/**/*",
+        "./libs/ckeditor/plugins/**/*",
+        "./libs/ckeditor/skins/**/*"
+      ]
+    },
+    "ng-lodash": {
+      "main": [
+        "./**/*.min.js"
+      ]
+    },
+    "ngstorage": {
+      "main": [
+        "./**/*.min.js"
+      ]
+    },
+    "ng-table-extend": {
+      "main": [
+        "./**/*.min.js",
+        "./**/*.min.css",
+        "./**/*.map"
+      ]
+    },
+    "responsive-tables": {
+      "main": [
+        "responsive-tables.js",
+        "responsive-tables.css"
+      ]
+    },
+    "restangular": {
+      "main": [
+        "./**/*.min.js"
+      ]
+    },
+    "rickshaw": {
+      "main": [
+        "./**/*.min.js",
+        "./**/*.css"
+      ]
+    },
+    "satellizer": {
+      "main": [
+        "./*.min.js"
+      ]
+    },
+    "select2": {
+      "main": [
+        "*.min.js",
+        "select2-bootstrap.css",
+        "select2.png",
+        "select2x2.png",
+        "select2-spinner.gif"
+      ]
+    },
+    "socket.io-client": {
+      "main": [
+        "./socket.io.js"
+      ]
+    },
+    "uikit": {
+      "main": [
+        "./dist/**/*.min.css",
+        "./dist/fonts/*",
+        "./dist/**/*.min.js"
+      ]
+    },
+    "ui-router-extras": {
+      "main": [
+        "./**/*.min.js"
+      ]
+    },
+    "ui-select": {
+      "main": [
+        "./src/select3.js"
+      ]
+    }
+  },
+  "resolutions": {
+    "jquery": "~2.1.1",
+    "angular": "~1.3.0",
+    "bootstrap": "~3.2.0",
+    "isotope": "~2.0.1"
+  },
+  "name": "JMedia",
+  "version": "0.0.1",
+  "author": "Karnith / JCMar",
+  "private": true
+}

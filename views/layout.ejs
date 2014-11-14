@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html ng-app="JMedia" ng-controller="AppCtrl">
+<head>
+    <base href="/">
+    <title>JMedia</title>
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="csrf-token" content="<%= _csrf %>">
+
+
+    <!--
+        Stylesheets and Preprocessors
+        ==============================
+
+        You can always bring in CSS files manually with `<link>` tags, or asynchronously
+        using a solution like AMD (RequireJS).  Or, if you like, you can take advantage
+        of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+        By default, stylesheets from your `assets/styles` folder are included
+        here automatically (between STYLES and STYLES END). Both CSS (.css) and LESS (.less)
+        are supported. In production, your styles will be minified and concatenated into
+        a single file.
+
+        To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Change the order of your CSS files
+            + Import stylesheets from other directories
+            + Use a different or additional preprocessor, like SASS, SCSS or Stylus
+    -->
+    <!--STYLES-->
+    <link rel="stylesheet" href="app/vendor/angular-xeditable/dist/css/xeditable.css">
+    <link rel="stylesheet" href="app/vendor/angular/angular-csp.css">
+    <link rel="stylesheet" href="app/vendor/bootstrapValidator/dist/css/bootstrapValidator.min.css">
+    <link rel="stylesheet" href="app/vendor/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="app/vendor/ng-table/ng-table.css">
+    <link rel="stylesheet" href="app/styles/default.css">
+    <link rel="stylesheet" href="app/styles/importer.css">
+    <!--STYLES END-->
+<!--
+    <script type="text/javascript">
+        window.JMedia = { _csrf: '<%= _csrf %>'};
+    </script>
+-->
+
+    <audio id="chatAudio">
+        <source src="/sounds/notify.ogg" type="audio/ogg">
+        <source src="/sounds/notify.mp3" type="audio/mpeg">
+        <source src="/sounds/notify.wav" type="audio/wav">
+    </audio>
+</head>
+
+<body class="page-body">
+    <!--<div class="navbar navbar-inverse navbar-fixed-top">-->
+        <!--<div class="container">-->
+            <!--<div class="navbar-header">-->
+                <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">-->
+                    <!--<span class="icon-bar"></span>-->
+                    <!--<span class="icon-bar"></span>-->
+                    <!--<span class="icon-bar"></span>-->
+                <!--</button>-->
+                <!--<a class="navbar-brand" href="/"> JMedia</a>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; Nav toggle&ndash;&gt;-->
+            <!--<div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">-->
+                <!--<ul class="nav navbar-nav">-->
+                    <!--<% if (session.authenticated && session.user.admin) { %>-->
+                    <!--<li class="dropdown">-->
+                        <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">-->
+                              <!--<span id="currentAdminMenu" class="fa fa-wrench fa-lg">-->
+                                  <!--Administration-->
+                              <!--</span>-->
+                            <!--<b class="caret"></b>-->
+                        <!--</a>-->
+                        <!--<ul class="dropdown-menu">-->
+                            <!--<li><a href="/api/administration"><span class="fa fa-desktop fa-lg"></span> System Administration</a></li>-->
+                            <!--<li><a href="/api/administration/users"><span class="fa fa-group fa-lg"></span> User Administration</a></li>-->
+                        <!--</ul>-->
+                    <!--</li>-->
+                    <!--<% } %>-->
+                <!--</ul>-->
+    <!---->
+                <!--&lt;!&ndash;<ul class="nav navbar-nav navbar-right">&ndash;&gt;-->
+                <!--<% if (!session.authenticated) { %>-->
+                <!--<div>-->
+                    <!--<a href="/api/members/reset" class="btn btn-info navbar-btn navbar-right" style="margin-left: 5px">Forgot Password</a>-->
+                <!--</div>-->
+                <!--<form action="/api/session/login" class="navbar-form navbar-right">-->
+                    <!--<div class="form-group">-->
+                        <!--<input type="text" placeholder="Email" name="email" class="form-control">-->
+                    <!--</div>-->
+                    <!--<div class="form-group">-->
+                        <!--<input type="password" placeholder="Password" name="password" class="form-control">-->
+                    <!--</div>-->
+                    <!--<button type="submit" class="btn btn-success">Sign in</button>-->
+                    <!--<input type="hidden" name="_csrf" value="<%= _csrf %>" />-->
+                <!--</form>-->
+                <!--<% } %>-->
+                <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+    <!---->
+                <!--<% if (session.authenticated) { %>-->
+                <!--<ul class="nav navbar-nav navbar-right navLiRightEdgePadding">-->
+                    <!--<li class="dropdown">-->
+                        <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">-->
+                              <!--<span id="currentUserMenu" class="fa fa-user">-->
+                                  <!--<%= session.user.name %>-->
+                              <!--</span>-->
+                            <!--<b class="caret"></b>-->
+                        <!--</a>-->
+                        <!--<ul class="dropdown-menu">-->
+                            <!--<li><a href="/api/account/details/<%= session.user.id %>"><span class="fa fa-user"></span> Profile</a></li>-->
+                            <!--<li><a href="/"><span class="fa fa-cogs"></span> Settings</a></li>-->
+                            <!--<li class="divider"></li>-->
+                            <!--<li><a href="/api/session/destroy"><span class="fa fa-sign-out"></span> Logout</a></li>-->
+                        <!--</ul>-->
+                    <!--</li>-->
+                <!--</ul>-->
+                <!--<% } %>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+<%- body %>
+<!--
+    <div class="container">
+        <hr>
+        <footer class="footer pull-right">
+            <div>
+                <a href="https://github.com/Karnith/JMedia/">JMedia</a>
+                <div>Take control of your library!</div>
+            </div>
+        </footer>
+    </div>
+-->
+
+
+
+<!--
+
+  Client-side Javascript
+  ========================
+
+  You can always bring in JS files manually with `script` tags, or asynchronously
+  on the client using a solution like AMD (RequireJS).  Or, if you like, you can
+  take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+  By default, files in your `assets/js` folder are included here
+  automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
+  CoffeeScript (.coffee) are supported. In production, your scripts will be minified
+  and concatenated into a single file.
+
+  To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+  For example, here are a few things you could do:
+
+      + Change the order of your scripts
+      + Import scripts from other directories
+      + Use a different preprocessor, like TypeScript
+
+-->
+
+<!--SCRIPTS-->
+<script src="app/vendor/jquery/dist/jquery.min.js"></script>
+<script src="app/vendor/gsap/src/minified/TimelineMax.min.js"></script>
+<script src="app/vendor/gsap/src/minified/TweenMax.min.js"></script>
+<script src="app/vendor/gsap/src/minified/easing/EasePack.min.js"></script>
+<script src="app/vendor/gsap/src/minified/jquery.gsap.min.js"></script>
+<script src="app/vendor/gsap/src/minified/plugins/AttrPlugin.min.js"></script>
+<script src="app/vendor/gsap/src/minified/plugins/BezierPlugin.min.js"></script>
+<script src="app/vendor/gsap/src/minified/plugins/CSSPlugin.min.js"></script>
+<script src="app/vendor/gsap/src/minified/plugins/CSSRulePlugin.min.js"></script>
+<script src="app/vendor/gsap/src/minified/plugins/ColorPropsPlugin.min.js"></script>
+<script src="app/vendor/gsap/src/minified/plugins/DirectionalRotationPlugin.min.js"></script>
+<script src="app/vendor/gsap/src/minified/plugins/EaselPlugin.min.js"></script>
+<script src="app/vendor/gsap/src/minified/plugins/EndArrayPlugin.min.js"></script>
+<script src="app/vendor/gsap/src/minified/plugins/KineticPlugin.min.js"></script>
+<script src="app/vendor/gsap/src/minified/plugins/RaphaelPlugin.min.js"></script>
+<script src="app/vendor/gsap/src/minified/plugins/RoundPropsPlugin.min.js"></script>
+<script src="app/vendor/gsap/src/minified/plugins/ScrollToPlugin.min.js"></script>
+<script src="app/vendor/gsap/src/minified/plugins/TextPlugin.min.js"></script>
+<script src="app/vendor/gsap/src/minified/utils/Draggable.min.js"></script>
+<script src="app/vendor/socket.io-client/socket.io.js"></script>
+<script src="app/js/dependencies/sails.io.js"></script>
+<script src="app/js/socketConfig.js"></script>
+<script src="app/vendor/angular/angular.min.js"></script>
+<script src="app/vendor/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="app/vendor/angular-bootstrap/ui-bootstrap.min.js"></script>
+<script src="app/vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="app/vendor/angular-ui-utils/ui-utils-ieshiv.min.js"></script>
+<script src="app/vendor/angular-ui-utils/ui-utils.min.js"></script>
+<script src="app/vendor/angular-sails/dist/angular-sails.min.js"></script>
+<script src="app/vendor/moment/min/moment-with-locales.min.js"></script>
+<script src="app/vendor/angular-moment/angular-moment.min.js"></script>
+<script src="app/vendor/angular-translate/angular-translate.min.js"></script>
+<script src="app/vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+<script src="app/vendor/ng-table/ng-table.js"></script>
+<script src="app/vendor/isotope/dist/isotope.pkgd.min.js"></script>
+<script src="app/vendor/angular-animate/angular-animate.min.js"></script>
+<script src="app/vendor/angular-bootstrap-switch/dist/angular-bootstrap-switch.min.js"></script>
+<script src="app/vendor/angular-breadcrumb/release/angular-breadcrumb.min.js"></script>
+<script src="app/vendor/angular-dropzone/lib/angular-dropzone.js"></script>
+<script src="app/vendor/angular-gsapify-router/angular-gsapify-router.js"></script>
+<script src="app/vendor/angular-isotope/dist/angular-isotope.min.js"></script>
+<script src="app/vendor/angular-messages/angular-messages.min.js"></script>
+<script src="app/vendor/angular-mocks/angular-mocks.js"></script>
+<script src="app/vendor/angular-rickshaw/rickshaw.min.js"></script>
+<script src="app/vendor/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="app/vendor/angular-touch/angular-touch.min.js"></script>
+<script src="app/vendor/angular-xeditable/dist/js/xeditable.min.js"></script>
+<script src="app/vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script src="app/vendor/bootstrap-switch/dist/js/bootstrap-switch.js"></script>
+<script src="app/vendor/bootstrapValidator/dist/js/bootstrapValidator.min.js"></script>
+<script src="app/vendor/d3/d3.min.js"></script>
+<script src="app/vendor/doc-ready/doc-ready.js"></script>
+<script src="app/vendor/dropzone/downloads/dropzone.min.js"></script>
+<script src="app/vendor/eventEmitter/EventEmitter.js"></script>
+<script src="app/vendor/eventie/eventie.js"></script>
+<script src="app/vendor/fullcalendar/dist/fullcalendar.min.js"></script>
+<script src="app/vendor/fullcalendar/dist/gcal.js"></script>
+<script src="app/vendor/fullcalendar/dist/lang-all.js"></script>
+<script src="app/vendor/get-size/get-size.js"></script>
+<script src="app/vendor/get-style-property/get-style-property.js"></script>
+<script src="app/vendor/jcrop/js/jquery.Jcrop.min.js"></script>
+<script src="app/vendor/jcrop/js/jquery.color.js"></script>
+<script src="app/vendor/jquery-bridget/jquery.bridget.js"></script>
+<script src="app/vendor/jqueryui/jquery-ui.min.js"></script>
+<script src="app/vendor/masonry/masonry.js"></script>
+<script src="app/vendor/matches-selector/matches-selector.js"></script>
+<script src="app/vendor/ng-bs-daterangepicker/dist/ng-bs-daterangepicker.min.js"></script>
+<script src="app/vendor/ng-jcrop/ng-jcrop.js"></script>
+<script src="app/vendor/ng-lodash/build/ng-lodash.min.js"></script>
+<script src="app/vendor/ngstorage/ngStorage.min.js"></script>
+<script src="app/vendor/oclazyload/dist/ocLazyLoad.min.js"></script>
+<script src="app/vendor/outlayer/item.js"></script>
+<script src="app/vendor/outlayer/outlayer.js"></script>
+<script src="app/vendor/responsive-tables/responsive-tables.js"></script>
+<script src="app/vendor/restangular/dist/restangular.min.js"></script>
+<script src="app/vendor/rickshaw/rickshaw.min.js"></script>
+<script src="app/vendor/rickshaw/vendor/d3.layout.min.js"></script>
+<script src="app/vendor/rickshaw/vendor/d3.min.js"></script>
+<script src="app/vendor/satellizer/satellizer.min.js"></script>
+<script src="app/vendor/select2/select2.min.js"></script>
+<script src="app/vendor/ui-router-extras/release/ct-ui-router-extras.min.js"></script>
+<script src="app/vendor/ui-select/src/select3.js"></script>
+<script src="app/vendor/uikit/dist/js/addons/autocomplete.min.js"></script>
+<script src="app/vendor/uikit/dist/js/addons/cover.min.js"></script>
+<script src="app/vendor/uikit/dist/js/addons/datepicker.min.js"></script>
+<script src="app/vendor/uikit/dist/js/addons/form-password.min.js"></script>
+<script src="app/vendor/uikit/dist/js/addons/form-select.min.js"></script>
+<script src="app/vendor/uikit/dist/js/addons/htmleditor.min.js"></script>
+<script src="app/vendor/uikit/dist/js/addons/nestable.min.js"></script>
+<script src="app/vendor/uikit/dist/js/addons/notify.min.js"></script>
+<script src="app/vendor/uikit/dist/js/addons/pagination.min.js"></script>
+<script src="app/vendor/uikit/dist/js/addons/search.min.js"></script>
+<script src="app/vendor/uikit/dist/js/addons/sortable.min.js"></script>
+<script src="app/vendor/uikit/dist/js/addons/sticky.min.js"></script>
+<script src="app/vendor/uikit/dist/js/addons/timepicker.min.js"></script>
+<script src="app/vendor/uikit/dist/js/addons/upload.min.js"></script>
+<script src="app/vendor/uikit/dist/js/uikit.min.js"></script>
+<script src="app/src/app/app.js"></script>
+<script src="app/src/app/common/frontend/header/header.js"></script>
+<script src="app/src/app/frontend/frontpage/about/about.js"></script>
+<script src="app/src/app/frontend/frontpage/home/home.js"></script>
+<script src="app/src/app/frontend/frontpage/index.js"></script>
+<script src="app/src/app/frontend/members/index.js"></script>
+<script src="app/src/app/frontend/members/membersdash/dash.js"></script>
+<script src="app/src/app/frontend/members/users/user.js"></script>
+<script src="app/src/app/services/auth/index.js"></script>
+<script src="app/src/app/services/auth/login.js"></script>
+<script src="app/src/app/services/auth/register.js"></script>
+<script src="app/src/common/directives/blink.js"></script>
+<script src="app/src/common/directives/chat.js"></script>
+<script src="app/src/common/directives/index.js"></script>
+<script src="app/src/common/directives/mainMenu.js"></script>
+<script src="app/src/common/directives/menuCustom.js"></script>
+<script src="app/src/common/directives/userMenu.js"></script>
+<script src="app/src/common/models/User.js"></script>
+<script src="app/src/common/models/index.js"></script>
+<script src="app/src/common/services/config.js"></script>
+<script src="app/src/common/services/index.js"></script>
+<script src="app/src/common/services/title.js"></script>
+<script src="app/src/common/services/utils.js"></script>
+<script src="app/themes/default/js/joinable.js"></script>
+<script src="app/themes/default/js/resizeable.js"></script>
+<script src="app/themes/default/js/neon-api.js"></script>
+<script src="app/themes/default/js/neon-custom.js"></script>
+<script src="app/js/customValidate.js"></script>
+<script src="app/js/password.js"></script>
+<script src="app/js/socketApp.js"></script>
+<!--SCRIPTS END-->
+
+<!--
+        Client-side Templates
+        ========================
+
+        HTML templates are important prerequisites of modern, rich client applications.
+        To work their magic, frameworks like Backbone, Angular, Ember, and Knockout require
+        that you load these templates client-side.
+
+        By default, your Gruntfile is configured to automatically load and precompile
+        client-side JST templates in your `assets/templates` folder, then
+        include them here automatically (between TEMPLATES and TEMPLATES END).
+
+        To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Import templates from other directories
+            + Use a different template engine (handlebars, jade, dust, etc.)
+            + Internationalize your client-side templates using a server-side
+              stringfile before they're served.
+    -->
+
+<!--TEMPLATES-->
+
+<!--TEMPLATES END-->
+
+</body>
+</html>
