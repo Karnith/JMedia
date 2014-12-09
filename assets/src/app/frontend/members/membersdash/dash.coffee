@@ -13,7 +13,8 @@ class config extends Config('members.dash')
           templateUrl: 'frontend/members/membersdash/dash.tpl.html'
       ncyBreadcrumb:
         label: 'Dashboard'
-#      data:
+      data:
+        pageTitle: 'Dashboard'
 class MembersDashCtrl extends Controller('members.dash')
   constructor: ($scope, titleService) ->
     titleService.setTitle 'Members Dashboard'
